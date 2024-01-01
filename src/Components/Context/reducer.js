@@ -3,8 +3,9 @@ export const AppReducer = (state,action)=>{
         case 'ADD_TRANSACTION':
         return {
             ...state,
-            transactions: [state.transaction, action.payload]
+            transactions: [...state.transactions, action.payload]
         }
+
         case 'DELETE_TRANSACTION':
         return {
             ...state,
