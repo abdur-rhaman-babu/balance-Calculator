@@ -1,13 +1,19 @@
+/* eslint-disable react/jsx-key */
+import { useContext } from "react";
+import { globalContext } from './Context/GlobalState';
+import Transaction from "./Transaction";
 
 
 const TransactionList = () => {
+  const {transactions} = useContext(globalContext)
+  // console.log(transactions);
     return (
         <>
         <h3>History</h3>
         <ul className="list">
-         <li className="minus">
-            cash <span>-$400</span><button className="delete-btn">x</button>
-         </li>
+          {
+            transactions && transactions.map((transaction)=><Transaction key={transaction.id} transaction={transaction}/>)
+          }
         </ul>
       </>
     );
