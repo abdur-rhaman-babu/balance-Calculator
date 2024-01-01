@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { globalContext } from "./Context/GlobalState";
 
-
 const Balance = () => {
     const {transactions} = useContext(globalContext)
     const amounts = transactions.map((transaction)=>transaction.amount)

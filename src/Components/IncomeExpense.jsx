@@ -11,11 +11,11 @@ const IncomeExpense = () => {
   // Total Income-------------------------------------------------------------//
   const incomes = amounts.filter((amount)=>amount>=0)
   // console.log(totalIncome);
-  const totalIncome= incomes.reduce((acc,income)=>acc+=income)
+  const totalIncome= incomes.reduce((acc,income)=>acc+=income,0).toFixed(2)
   // console.log(totalIncome);
 
   // Total expense-----------------------------------------------------------//
-  const totalExpenses = amounts.filter((amount)=>amount<=0).reduce((acc,income)=>acc+=income)
+  const totalExpenses = amounts.filter((amount)=>amount<=0).reduce((acc,income)=>acc+=income,0).toFixed(2)*-1
   // console.log(totalExpenses);
 
   return (

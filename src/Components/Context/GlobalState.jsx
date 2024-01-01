@@ -17,11 +17,15 @@ export const globalContext = createContext()
 
 // create global provider
 export const GlobalProvider = ({children})=>{
-    // eslint-disable-next-line no-unused-vars
+    const deleteTransaction =(id)=>{
+        dispatch({type:'DELETE_TRANSACTION',payload:id})
+    }
+
     const [state,dispatch] = useReducer(AppReducer, initialState)
     return (
         <globalContext.Provider value={{
-            transactions: state.transactions
+            transactions: state.transactions,
+            deleteTransaction
         }}>
             {children}
         </globalContext.Provider>
